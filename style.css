@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --main--color:#54a0ff;
+    --secondary-color:#b0c8e0;
+    --sans: "josefin sans",snas sarif;
+
+}
+body {
+  background-color: #222f3e;
+}
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50vw;
+  height: 70vh;
+  background: var(--main--color);
+  border-radius: 5px;
+  font-family: "dancing script", cursive;
+  overflow: hidden;
+  color: #797d7f;
+  display: grid;
+  place-items: center;
+}
+.inner {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  opacity: 1;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+.box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  height: 70%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.5);
+  font-size: 1.3rem;
+}
+
+.number::before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  right: -30px;
+  width: 90px;
+  height: 200px;
+  background: var(--secondary-color);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  z-index: -1;
+  box-shadow: 0 0 0.7rem rgba(0, 0, 0, 0.5);
+}
+.number {
+  font-family: var(--sans);
+  position: absolute;
+  margin: 0;
+  top: 15px;
+  right: 15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.number img {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  left: -28px;
+  top: -10px;
+  cursor: pointer;
+  animation: rot 1s linear;
+}
+.number :hover img {
+  animation: rot 1s linear;
+}
+@keyframes rot {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.quote {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80%;
+  font-size: 1.3rem;
+
+}
+.author{
+    position: absolute;
+    top: 60%;
+    right: 10px;
+}
+.start-quote{
+    font-size: 2em;
+    position: absolute;
+    left: 12px;
+    top: 20px;
+}
+#newQuote{
+     position: absolute;
+     width: 100%;
+     bottom: 0%;
+     padding: auto ;
+     font-size: 1.2em;
+     text-align: center;
+     color: #fff;
+     background: var(--main--color);
+     cursor: pointer;
+}
+@media (max-width:768px) {
+  .container {
+  width: 80vw;
+  }
+}
+@media (max-width:468px) {
+  .container {
+  width: 98vw;
+  }
+  .start-quote{
+    font-size: 1em;
+}
+.inner {
+  width: 100%;
+}
+}
